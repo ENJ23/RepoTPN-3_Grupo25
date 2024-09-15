@@ -11,8 +11,9 @@ public class Main {
     Scanner cin = new Scanner (System.in);
     Util util = new Util();
     int opcion = 0;
-    try {
+   
     do {
+    	 try {
     System.out.println("Menú de Opciones");
                 System.out.println("----------------");
                 System.out.println
@@ -25,7 +26,11 @@ public class Main {
                 opcion = cin.nextInt();
                 
                 cin.nextLine();
-                
+    }catch(Exception e) {
+    	System.out.println("Opción inválida. Intentelo de nuevo.");
+        cin.nextLine(); // Limpiar el buffer del scanner en caso de excepción
+        opcion = 999;
+    }
                 switch (opcion) {
                 
                 case 1:
@@ -55,14 +60,12 @@ public class Main {
                 	System.out.println("Cerrando Menu...");
                 	break;
                 default:
-                	System.out.println("Opcion Invalida, cerrando programa...");
+                	System.out.println("Opcion Invalida, ");
                 	break;
                 }
                 
     }  while (opcion != 5);  
-    }catch(Exception e) {
-    	System.out.println("Ingresar un Numero");
-    }
+    
 	}
 
 }
