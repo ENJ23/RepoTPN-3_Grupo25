@@ -27,7 +27,41 @@ public class Util {
 	
 	}
 	
-	public double sumarSalarios(HashSet<Empleado>listaEmpleados) {
-		
+	public double sumarSalarios (HashSet<Empleado> listaEmpleados) {
+
+        double suma = 0;
+
+        if (listaEmpleados.isEmpty()) {
+            return 0;
+        }else {
+
+            for (Empleado e : listaEmpleados) {
+                suma += e.getSalario(); //suma = suma + e.getSalario();
+            }
+        }
+        return suma;
+    }
+	
+	public Empleado buscarEmpleado (HashSet<Empleado> listaEmpleados, String legajo) {
+
+        if (legajo != null) {
+            for (Empleado e : listaEmpleados) {
+                if (e.getLegajo().equals(legajo)) {
+                    return e;
+                }
+            }
+        }
+        return null;
+    }
+	
+	public void recorrerLista (HashSet<Empleado> listaEmpleados) {
+		if (listaEmpleados.isEmpty()) {
+            System.out.println("esta lista esta vacia");
+        }else {
+
+            for (Empleado e : listaEmpleados) {
+               System.out.println(e);
+            }
+        }
 	}
 }

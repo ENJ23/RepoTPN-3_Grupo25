@@ -11,7 +11,7 @@ public class Main {
     Scanner cin = new Scanner (System.in);
     Util util = new Util();
     int opcion = 0;
-    
+    try {
     do {
     System.out.println("Menú de Opciones");
                 System.out.println("----------------");
@@ -35,15 +35,34 @@ public class Main {
                 
                 case 2:
                 
+                System.out.println("Ingrese el legajo del empleado que desea que tenga un aumento");
+                String legajoBuscar = cin.nextLine();
+                Empleado empleado = util.buscarEmpleado(listaEmpleados, legajoBuscar);
                 util.aumetarSalario(empleado);
+                
                 break;
                 
                 case 3:
                 	
+                	double salarioSuma=util.sumarSalarios(listaEmpleados);
+                	System.out.println("El salario total es: " + salarioSuma);
+                	break;
+                case 4:
+                	util.recorrerLista(listaEmpleados);
+                    break;
                 	
+                case 5:
+                	System.out.println("Cerrando Menu...");
+                	break;
+                default:
+                	System.out.println("Opcion Invalida, cerrando programa...");
+                	break;
                 }
                 
-    }  while (opcion < 5);   
+    }  while (opcion != 5);  
+    }catch(Exception e) {
+    	System.out.println("Ingresar un Numero");
+    }
 	}
 
 }

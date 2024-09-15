@@ -55,4 +55,9 @@ public class Empleado {
 		return AUMENTO;
 	}
 
+	@Override
+	public String toString() {
+		return "Empleado [nombre=" + nombre + ", salario=" + salario + ", legajo=" + legajo + "]";
+	}
+
 }
