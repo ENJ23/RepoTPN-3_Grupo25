@@ -1,4 +1,4 @@
-package ar.edu.escmi.poo.ejercicio05;
+package ar.edu.unju.escmi.poo.ejercicio05;
 
 import java.util.ArrayList;
 import java.util.List;
